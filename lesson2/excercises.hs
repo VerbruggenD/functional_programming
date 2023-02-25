@@ -1,3 +1,5 @@
+import Debug.Trace
+
 
 aantalDelers n = probeerDelersVanaf 1 n
 probeerDelersVanaf kandidaatDeler n
@@ -112,3 +114,56 @@ gelukkigGetal n = gelukkig n []
           kwadraten (x:xs) = x * x + kwadraten xs
 
 
+{-
+geef min max en gemiddelde van een lijst met maar 1 passage
+-}
+
+maxLijst [x] = x
+maxLijst (x:xs)
+  | x > maxTail = x
+  | otherwise = maxTail
+  where maxTail = maxLijst xs
+
+avgLijst :: [Double] -> Double
+avgLijst [] = 0
+avgLijst (x:xs) = avg (x:xs) (fromIntegral (length (x:xs)))
+    where
+        avg :: [Double] -> Double -> Double
+        avg [] _ = 0
+        avg (x:xs) l =  (x / l) + (avg xs l)
+
+analyseerLijst (x:xs) = (minVal (x:xs), maxVal (x:xs), avgVal (x:xs))
+    where
+        minVal [x] = x
+        minVal (x:xs)
+            | x < minTail = x
+            | otherwise = minTail
+            where minTail = minVal xs
+        maxVal [x] = x
+        maxVal (x:xs)
+            | x > maxTail = x
+            | otherwise = maxTail
+            where maxTail = maxVal xs
+        avgVal :: [Double] -> Double
+        avgVal [] = 0
+        avgVal (x:xs) = avg (x:xs) (fromIntegral (length (x:xs)))
+            where
+                avg :: [Double] -> Double -> Double
+                avg [] _ = 0
+                avg (x:xs) l =  (x / l) + (avg xs l)
+
+analyseerLijst2 [x] = (x, x, x)
+analyseerLijst2 (x:xs) = (minimum (x:xs), maximum (x:xs), (avg (x:xs) (fromIntegral (length (x:xs)))))
+    where
+        avg :: [Double] -> Double -> Double
+        avg [] _ = 0
+        avg (x:xs) l =  (x / l) + (avg xs l)
+
+{- 
+zoek de nulpunten van de 2de graads functie van de vorm axˆ2 + bx + c
+-}
+nulpunten a b c = trace (show d) (root1, root2)
+    where
+        d = (b * b) - 4 * a * c
+        root1 = ((((-1) * b) + sqrt (d)) / (2*a))
+        root2 = ((((-1) * b) - sqrt (d)) / (2*a))
