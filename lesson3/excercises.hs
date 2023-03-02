@@ -54,6 +54,29 @@ lettersUpper xs = map toUpper xs
 isHoofdLetter xs = filter isUpper xs
 
 klinkerHoofdletter xs = map toUpper (filter (\x -> elem x "aeiou") xs)
+{-
 klinkerInHoofdletter xs = 
-     if map (\x -> elem x "aeiou") then (toUpper x)
+    map (\x -> elem x "aeiou") xs then (toUpper x)
                                 else x
+-}
+
+geefPriem [] = []
+geefPriem xs = filter (\x -> isPriem x) xs
+
+bereken2deGraads a b c (xs) = [ tweedeGraads a b c x | x <- xs ]
+    where
+        tweedeGraads a b c x = a*x*x + b*x + c
+
+{-
+    oefeningen op Foldr/Foldl
+-}
+
+lijstProduct (x) = foldr (*) 1 (x)
+
+lijstDeling (x:y:ys) = (foldl (/) (x / y) (ys))
+
+doorsnedeLijst xs ys = foldr (\y acc -> if elem y xs then y:acc else acc) [] ys
+
+isSomDelersGroter getal = (foldr (+) 0 (delers getal)) > getal
+    where
+        delers getal = [x | x <- [1..(getal)], rem getal x == 0, x > 1, x < getal]
