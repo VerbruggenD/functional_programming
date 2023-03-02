@@ -8,6 +8,7 @@ The programming language is Haskell and here are the most important commands fou
 - run: terminal in folder, `ghci test.hs`
 - load without openening directly `:l file.hs`
 - reload: `:r`
+- more information about the execution: `:set +s` en `:set +t` 
 
 - deling: div x y voor gehele getallen, x/y voor kommagetallen
 
