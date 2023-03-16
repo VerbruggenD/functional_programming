@@ -74,9 +74,16 @@ bereken2deGraads a b c (xs) = [ tweedeGraads a b c x | x <- xs ]
 lijstProduct (x) = foldr (*) 1 (x)
 
 lijstDeling (x:y:ys) = (foldl (/) (x / y) (ys))
+lijstDeling2 (x:xs) = foldl (/) x xs
 
-doorsnedeLijst xs ys = foldr (\y acc -> if elem y xs then y:acc else acc) [] ys
+doorsnede xs ys = foldr (\y acc -> if elem y xs then y:acc else acc) [] ys
 
-isSomDelersGroter getal = (foldr (+) 0 (delers getal)) > getal
-    where
-        delers getal = [x | x <- [1..(getal)], rem getal x == 0, x > 1, x < getal]
+doorsnede2 xs ys = [x | x <- xs, y <- ys, x==y]
+
+doorsnedeLijst [] = []
+doorsnedeLijst (x:xs) = foldl (doorsnede) x xs
+
+delerLijst getal = [x | x <- [2..(div getal 2)], mod getal x == 0]
+
+isGetalGroterDanSom getal = (foldr (+) 0 (delers getal)) < getal
+    where delers getal = [x | x <- [2..(div getal 2)], mod getal x == 0]
