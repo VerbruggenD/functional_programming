@@ -12,3 +12,6 @@ The programming language is Haskell and here are the most important commands fou
 
 - deling: div x y voor gehele getallen, x/y voor kommagetallen
 
+- `:sprint y` voor de variabale te bekijken voor deze uitgerekend is
+- `zipWith` 
+
