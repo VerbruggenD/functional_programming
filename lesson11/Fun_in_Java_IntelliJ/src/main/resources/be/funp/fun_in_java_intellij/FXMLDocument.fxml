@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="895.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"  fx:controller="be.funp.fun_in_java_intellij.FXMLDocumentController">
+   <children>
+      <Button fx:id="selectFixedData" layoutX="19.0" layoutY="55.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="91.0" text="Fixed data" />
+      <Button fx:id="selectRandomData" layoutX="127.0" layoutY="55.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="91.0" text="Random data" />
+      <Button fx:id="btnExercise1" layoutX="121.0" layoutY="185.0" mnemonicParsing="false" text="Exercise 1" />
+      <Button fx:id="btnExercise2" layoutX="121.0" layoutY="229.0" mnemonicParsing="false" text="Exercise 2" />
+      <Button fx:id="btnExercise3" layoutX="121.0" layoutY="273.0" mnemonicParsing="false" text="Exercise 3" />
+      <Button fx:id="btnExercise4" layoutX="121.0" layoutY="313.0" mnemonicParsing="false" text="Exercise 4" />
+      <Button fx:id="btnExercise5" layoutX="121.0" layoutY="351.0" mnemonicParsing="false" text="Exercise 5" />
+      <TextArea fx:id="status" layoutX="239.0" layoutY="44.0" prefHeight="157.0" prefWidth="576.0" text="sdgsd" />
+      <Label layoutX="239.0" layoutY="14.0" text="Test Data" />
+      <Label layoutX="239.0" layoutY="219.0" text="Output Data" />
+      <TextArea fx:id="output" layoutX="239.0" layoutY="250.0" prefHeight="157.0" prefWidth="576.0" text="sgdsdg" />
+      <Button fx:id="btnExercise6" layoutX="121.0" layoutY="392.0" mnemonicParsing="false" text="Exercise 6" />
+      <Button fx:id="ageSorter" layoutX="19.0" layoutY="106.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="197.0" text="Sort by age" />
+      <Button fx:id="salarySorter" layoutX="19.0" layoutY="144.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="197.0" text="Sort by salary" />
+   </children>
+</Pane>
